@@ -159,7 +159,7 @@ print('Start ', mass_start, momentum_start, energy_start)
 
 density = []
 time_current = 0.
-pbar = tqdm(total=time, bar_format=)
+pbar = tqdm(total=time, bar_format='{l_bar}{bar}| {n_fmt:.4s}/{total_fmt} [{elapsed}<{remaining},{rate_fmt}{postfix}]')
 while time_current < time: # Main timestep loop
     dt = copy.copy(dt_max)
     for cell in cells:
