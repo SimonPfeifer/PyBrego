@@ -8,7 +8,7 @@ from sodshock_solution import get_solution
 N_cells = 100
 time = 0.2
 
-space_order = 2
+space_order = 1
 time_order = 1
 boundary_type = 1 # periodic=0, reflective=1
 
@@ -177,7 +177,7 @@ class Cell:
                                                                                                     pressure_left, density_right, 
                                                                                                     velocity_right, pressure_right)
 
-        if self.boundary_type != 1 or self.boundary_x == 1:
+        if self.boundary_type != 1 or self.boundary_x != 0:
             self.ngb_left.mass -= flux_mass * self.ngb_left.surface_area * dt
             self.ngb_left.momentum -= flux_momentum * self.ngb_left.surface_area * dt
             self.ngb_left.energy -= flux_energy  * self.ngb_left.surface_area * dt
